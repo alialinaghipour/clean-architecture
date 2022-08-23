@@ -1,0 +1,679 @@
+@font-face {
+    font-family: 'BYekan';
+    src: url('fonts/BYekan-webfont.eot') format('eot'),
+         url('fonts/BYekan-webfont.woff') format('woff'),
+         url('fonts/BYekan-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+  overflow-x: hidden;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'BYekan';
+  font-size: 14px;
+  word-spacing: -1px;
+  background-color: #f2f2f2
+}
+
+/***********Default setting************/
+
+a:link,a:hover,a:active{text-decoration: none; outline: 0 !important}
+i,span,label,a{display: inline-block; font-weight: normal;}
+ul{list-style: none !important; list-style-type: none !important; margin: 0; padding: 0}
+h1,h2,h3,h4,h5,h6{font-size: 15px; margin: 0; padding: 0}
+img{max-width: 100%}
+
+/********** Transition ************/
+a,i,input[type="submit"], form button{ -webkit-transition : all 0.2s linear 0s; -moz-transition : all 0.2s linear 0s; -ms-transition : all 0.2s linear 0s; -o-transition : all 0.2s linear 0s; transition : all 0.2s linear 0s}
+
+.user-account .avatar-layer ul:after{ display: block; clear: both; content: ''; visibility: hidden; height: 0; line-height: 0}
+
+.landing-layer{
+  width: 100%;
+  background: url('../images/slide.jpg') no-repeat center center / cover;
+  position: relative;
+}
+.landing-layer nav {
+  padding: 25px 0
+}
+.landing-layer nav ul li{
+  display: inline-table;
+}
+.landing-layer nav ul li a{
+  line-height: 25px;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 15px 0 10px
+}
+.landing-layer nav .clientarea{
+  text-align: left;
+  color: #fff
+}
+.landing-layer nav .clientarea i{
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  top: 3px;
+  margin-left: 4px
+}
+.landing-layer nav .clientarea a{
+  color: #fff;
+}
+.landing-layer nav ul li a:hover,
+.landing-layer nav .clientarea a:hover{
+  color: #20991d
+}
+.landing-layer header{
+  padding: 50px 0;
+  text-align: center;
+  color: #fff;
+  word-spacing: -1px
+}
+.landing-layer header .logo{
+  width: 250px;
+  display: block;
+  margin: 0 auto 20px
+}
+.landing-layer header h1{
+  line-height: 30px;
+  padding: 10px 0 20px;
+  font-size: 31px
+}
+.landing-layer header h2,
+.landing-layer header h3{
+  line-height: 30px;
+  padding: 10px 0;
+  font-size: 23px
+}
+.landing-layer .search-form {
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 30px
+}
+.landing-layer .search-form form{
+   width: 100%;
+   height: 45px;
+   position: relative;
+   margin-bottom: 50px
+}
+.landing-layer .search-form form input{
+   background-color: #fff;
+   border-radius: 3px;
+   -moz-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   width: 100%;
+   line-height: 50px;
+   border:0;
+   padding: 0 20px 0 60px;
+   color: #2C373B
+}
+.landing-layer .search-form form button{
+   background-color:#2aaf27;
+   color: #fff;
+   font-size: 24px;
+   width: 50px;
+   height: 48px;
+   position: absolute;
+   left: 1px;
+   top: 1px;
+   border:0;
+   -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.landing-layer .search-form form button i{
+   position: relative;
+   top: 5px
+}
+.landing-layer .search-form form button:hover{
+   background-color: #2C373B
+}
+.main-menu{
+  background-color: #2aaf27;
+  position: relative;
+}
+.main-menu nav{
+  position: relative;
+}
+.main-menu nav > ul > li{
+  float: right;
+  padding: 15px 0;
+  position: relative;
+}
+.main-menu nav > span{
+  font-size: 36px;
+  color: #fff;
+  display: none
+}
+.main-menu nav > span:hover{
+  color: #0c740a;
+  cursor: pointer;
+}
+.main-menu nav > ul > li > a{
+  color: #fff;
+  padding: 0 15px;
+  border-left: 1px solid #20991d;
+  font-size: 16px
+}
+.main-menu nav > ul > li:last-child > a{
+  border-left: 0
+}
+.main-menu nav > ul > li > ul{
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #2aaf27;
+  padding: 5px 10px;
+  border-bottom: 3px solid #0c740a;
+  min-width: 230px;
+  white-space: nowrap;
+  display: none;
+  z-index: 1000
+}
+.main-menu nav > ul > li > ul > li{
+  width: 100%;
+}
+.main-menu nav > ul > li > ul > li > a{
+  padding: 6px 15px 6px 10px;
+  line-height: 22px;
+  color: #fff
+}
+.main-menu nav > ul > li:hover > a:hover,
+.main-menu nav > ul > li > ul > li > a:hover{
+  color: #0c740a
+}
+
+
+
+footer .top-footer{
+  width: 100%;
+  background-color: #26292c;
+  padding: 40px 0 20px
+}
+.top-footer .list{
+  margin-bottom: 20px
+}
+.top-footer .list header{
+  margin-bottom: 20px;
+  position: relative;
+}
+.top-footer .list header:before{
+  width: 100%;
+  content: '';
+  position: absolute;
+  height: 12px;
+  right: 0;
+  top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #404E51;
+  z-index: 10
+}
+.top-footer .list header h4{
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-block;
+  background-color: #26292c;
+  z-index: 11;
+  position: relative;
+  padding-left: 20px
+}
+.top-footer .list ul li a{
+  display: block;
+  line-height: 25px;
+  padding: 2px 15px 2px 0;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+}
+.top-footer .list ul li a:hover{
+  padding-right: 17px;
+  color: #37d43b
+}
+.top-footer .list ul li a:before{
+  position: absolute;
+  color: #37d43b;
+  font-size: 6px;
+  font-family: 'FontAwesome';
+  content: '\f111';
+  right: 0;
+  top: 3px
+}
+.bottom-footer{
+  background-color: #1e2023;
+  padding: 15px 0
+}
+.bottom-footer p{
+  color: #B2BFC5;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: justify;
+  padding: 0;
+  margin: 0
+}
+.bottom-footer p a{
+  color: #B2BFC5;
+}
+.bottom-footer p a:hover{
+  color: #09E3B1
+}
+
+.client-page{
+  width: 100%;
+  padding: 100px 0;
+}
+.client-page .container-content{
+  width: 450px;
+  margin: 0 auto;
+  padding: 20px 25px;
+  background-color: #fff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  box-shadow: 0 0 15px #ccc
+}
+.client-page .container-content .input-group{
+  padding: 10px 0;
+  width: 100%
+}
+.client-page .container-content .input-group-addon{
+  width: 55px;
+  font-size: 18px
+}
+.client-page .container-content .form-control{
+  height: 40px
+}
+.client-page .container-content header h2{
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 45px;
+  display: block;
+  text-align: center;
+  word-spacing: -2px;
+  margin-bottom: 15px;
+}
+.client-page .container-content .link{
+  padding: 15px 0
+}
+.client-page .container-content .link a{
+  display: block;
+  line-height: 30px;
+  font-size: 14px;
+  color: #1CBDF9
+}
+.client-page .container-content .link a:hover{
+  color: #2C373B
+}
+.client-page .container-content .link a i{
+  font-size: 17px;
+  margin-left: 5px;
+  position: relative;
+  top: 2px
+}
+.client-page .container-content .link a i.zmdi-account{
+  font-size: 18px;
+  right: -1px
+}
+.client-page .container-content .remember-me,
+.client-page .container-content .accept-rules{
+  margin-top: 10px
+}
+.client-page .container-content input[type="checkbox"]{
+  position: relative;
+  top: 2px;
+  margin-left: 5px
+}
+
+main{
+    padding: 35px 0 45px
+}
+main#home-page{
+    background-color: #fff
+}
+main .terms-items header{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 35px
+}
+main .terms-items header h2{
+    text-align: center;
+    font-size: 21px;
+    line-height: 30px;
+    color: #252a2b
+}
+main .terms-items header a{
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+    color: #4b4f4f
+}
+main .terms-items header a:hover{
+    color: #2aaf27
+}
+main .terms-items .term-col article{
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 0 10px #ccc
+}
+main .terms-items .term-col article .img-layer,
+main .terms-items .term-col article .img-layer img{
+    width: 100%;
+    display: block;
+}
+main .terms-items .term-col article h2 a{
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    line-height: 25px;
+    color: #252a2b;
+    padding: 10px
+}
+main .terms-items .term-col article h2 a:hover{
+    color: #2aaf27;
+}
+main .terms-items .term-col article span{
+    color: #2aaf27;
+    padding: 10px;
+    border-top: 1px solid #f2f2f2;
+    width: 100%;
+    display: block
+}
+
+main .terms-items .term-col article i{
+    color: #ccc;
+    font-size: 13px;
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
+    font-style: normal;
+}
+.breadcrumb{
+  background-color: transparent;
+  margin: 15px 0
+}
+.breadcrumb li a,
+.breadcrumb li{
+  color: #26292c
+}
+
+.user-account aside > section,
+.user-account .avatar-layer{
+  border:1px solid #ecf1f8; 
+  margin-bottom: 25px;
+  background-color: #fff
+}
+.user-account .avatar-layer .img-layer{
+  margin: 25px auto 0;
+  position: relative;
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;  
+}
+.user-account .avatar-layer .img-layer img{
+    width: 130px;
+    height: 130px;
+    border:3px solid #ecf1f8; 
+    z-index: 1;
+    position: relative;
+}
+.user-account .avatar-layer .img-layer .change-image{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 27px;
+    color: #657d9a;
+    background-color: rgba(228,235,245,0.4); 
+    position: absolute;
+    z-index: 2;
+    opacity:0;
+}
+.user-account .avatar-layer .img-layer:hover .change-image{
+    opacity:1;
+}
+.user-account .avatar-layer .detail{
+    width: 100%;
+    padding: 10px 0 15px;
+    text-align: center;
+}
+.user-account .avatar-layer .detail h3{
+    font-size: 14px;
+    font-weight: bold;
+    word-spacing: -1px;
+    line-height: 25px;
+    padding-bottom: 3px;
+    color: #4b5b74
+}
+.user-account .avatar-layer .detail span{
+    font-size: 14px;
+    word-spacing: -1px;
+    line-height: 25px;
+    color: #7389a3;
+    display: block;
+}
+.user-account aside > section header{
+  padding: 5px 15px;
+  border-bottom: 1px solid #ecf1f8
+}
+.user-account aside > section header h3{
+  font-size: 15px;
+  line-height: 35px;
+}
+.user-account aside > section .inner{
+  padding: 10px 15px
+}
+.user-account aside > section .inner ul li a{
+  display: block;
+  font-size: 14px;
+  line-height: 25px;
+  padding: 4px 0;
+  color: #222
+}
+.user-account aside > section .inner ul li a:hover{
+  color: #2aaf27
+}
+.user-account .user-account-content{
+  border:1px solid #ecf1f8; 
+  margin-bottom: 25px;
+  background-color: #fff;
+}
+.user-account .user-account-content > header{
+  padding: 5px 15px;
+  border-bottom: 1px solid #ecf1f8
+}
+.user-account .user-account-content > header h1{
+  font-size: 15px;
+  line-height: 35px;
+}
+.user-account .user-account-content .inner{
+  padding: 20px
+}
+.user-account .user-account-content .inner .account-information h3{
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #2aaf27
+}
+.user-account .user-account-content .inner .account-information ul li{
+  display: block;
+  font-size: 14px;
+  line-height: 25px;
+  padding: 4px 0;
+  color: #222
+}
+.user-account .user-account-content .inner .account-information ul li i{
+  margin-left: 5px;
+  position: relative;
+  top: 3px;
+  font-size: 16px;
+  color: #ccc
+}
+.user-account .form-layer{
+  padding: 0 20px
+}
+.user-account .form-layer .input-group{
+  margin-bottom: 15px
+}
+.user-account .form-layer .link{
+  padding: 15px 0
+}
+.user-account .form-layer .link a{
+  display: block;
+  line-height: 30px;
+  font-size: 14px;
+  color: #1CBDF9
+}
+.user-account .form-layer .link a:hover{
+  color: #2C373B
+}
+.user-account .form-layer .link a i{
+  font-size: 17px;
+  margin-left: 5px;
+  position: relative;
+  top: 2px
+}
+.user-account .form-layer .checkbox-layer{
+  margin-top: 10px
+}
+.user-account .form-layer .checkbox-layer input[type="checkbox"],
+.user-account .form-layer .radio-layer input[type="radio"]{
+  position: relative;
+  top: 2px;
+  margin-left: 5px
+}
+
+.user-account .form-layer .checkbox-layer label,
+.user-account .form-layer .radio-layer label{
+  margin-left: 25px
+}
+
+
+
+@media screen and (max-width : 991px){
+  .main-menu nav > span{
+    display: block;
+  }
+  .main-menu nav > ul{
+    display: none
+  }
+  .main-menu{
+    height: 44px;
+  }
+  .main-menu nav{
+    width: 50px;
+    height: 44px
+  }
+  .main-menu nav > span{
+    display: block;
+  }
+  .main-menu nav > ul{
+    position: absolute;
+    min-width: 280px;
+    white-space: nowrap;
+    right: 0;
+    top: 44px;
+    background-color: #2aaf27;
+    border-bottom: 3px solid #0c740a;
+    padding: 10px 15px 15px;
+    z-index: 1000;
+    display: none
+  }
+  .main-menu nav > ul > li{
+    width: 100%;
+    float: none;
+    padding: 5px 0;
+    position: relative;
+  }
+  .main-menu nav > ul > li > a{
+    border-left: 0
+  }
+  .main-menu nav > ul > li:nth-child(1) a{
+  padding-right: 15px
+  }
+  .main-menu nav > ul > li .caret-icon{
+    position: absolute;
+    left: 5px;
+    top: 0;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    font-size: 22px
+  }
+  .main-menu nav > ul > li ul{
+    position: static;
+  }
+  .main-menu nav > ul > li > ul > li > a{
+    display: block;
+    width: 100%
+  }
+  .client-page{
+    padding: 50px 0
+  }
+}
+
+@media screen and (max-width : 768px){
+  .client-page .container-content{
+    width: 92%;
+    margin-right: 4%
+  }
+  .landing-layer header h1{
+    font-size: 26px
+  }
+  .landing-layer header h2, .landing-layer header h3{
+    padding: 5px 0;
+    font-size: 19px;
+  }
+  .landing-layer .search-form{
+    width: 90%;
+    margin-right: 5%
+  }
+  .landing-layer nav ul li a{
+    padding-right: 0
+  }
+}
+
+@media screen and (max-width : 767px){
+  .landing-layer header{
+    padding-top: 0
+  }
+  .landing-layer nav .clientarea{
+    text-align: right;
+    padding-top: 10px
+  }
+  .landing-layer .search-form{
+    padding-bottom: 0;
+    width: 100%;
+    margin: 0
+  }
+}
+
+@media screen and (max-width : 480px){
+  .landing-layer header h2, .landing-layer header h3{
+    display: none
+  }
+  .landing-layer header h1{
+    font-size: 21px
+  }
+  .landing-layer header{
+    padding-bottom: 30px
+  }
+}

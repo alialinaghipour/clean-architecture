@@ -1,0 +1,81 @@
+﻿@model WebMvc.ViewModels.RegisterUserViewModel
+@{
+    ViewData["Title"] = "ثبت نام";
+}
+
+<nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">آموزش با من</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">عضویت در سایت</li>
+    </ul>
+</nav>
+
+<main class="client-page">
+    <div class="container-content">
+        
+        <header>
+            <h2> عضویت در سایت </h2>
+        </header>
+
+        <div class="form-layer">
+
+            <form asp-action="Register" method="post">
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="username">
+                        <i class="zmdi zmdi-account"></i>
+                    </span>
+                    <input asp-for="UserName"
+                           type="text" class="form-control"
+                           placeholder="نام کاربری"
+                           aria-describedby="username">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="email-address">
+                        <i class="zmdi zmdi-email"></i>
+                    </span>
+                    <input asp-for="Email"
+                           type="text" class="form-control"
+                           placeholder="ایمیل"
+                           aria-describedby="email-address">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="password">
+                        <i class="zmdi zmdi-lock"></i>
+                    </span>
+                    <input asp-for="Password"
+                           type="password" class="form-control"
+                           placeholder="رمز عبور "
+                           aria-describedby="password">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="password">
+                        <i class="zmdi zmdi-lock"></i>
+                    </span>
+                    <input asp-for="RePassword"
+                           type="password"
+                           class="form-control"
+                           placeholder="تکرار رمز عبور "
+                           aria-describedby="password">
+                </div>
+
+                <div class="link">
+                    <a href="/Login">
+                        <i class="zmdi zmdi-account"></i> ورود به سایت
+                    </a>
+                </div>
+                <div asp-validation-summary="All" class="text-danger">
+
+                </div>
+                <button class="btn btn-success"> عضویت در سایت </button>
+
+            </form>
+        </div>
+
+    </div>
+</main>

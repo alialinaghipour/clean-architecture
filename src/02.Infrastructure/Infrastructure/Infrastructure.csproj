@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0"/>
+        <PackageReference Include="Autofac" Version="6.3.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.ApiExplorer" Version="2.2.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.5"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.3"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.5"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\00.Framework\Identity\Identity.csproj"/>
+        <ProjectReference Include="..\..\01.Core\ApplicationContracts\ApplicationContracts.csproj"/>
+        <ProjectReference Include="..\..\01.Core\ApplicationServices\ApplicationServices.csproj"/>
+        <ProjectReference Include="..\..\03.Persistence\Persistence.Ef\Persistence.Ef.csproj"/>
+    </ItemGroup>
+
+</Project>

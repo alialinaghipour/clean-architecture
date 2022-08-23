@@ -1,0 +1,53 @@
+﻿@inject IUserService _userService;
+@inject IUserInfoIdentity _userInfoIdentity;
+
+@{
+    var user =await _userService
+        .GetProfileByUserName(_userInfoIdentity.GetUserName());
+
+    if (user == null)
+        throw new Exception("User Not Found");
+}
+
+<div class="col-md-3 col-sm-4 col-xs-12">
+    <aside>
+
+        <div class="avatar-layer">
+            <div class="img-layer">
+                <a href="" class="change-image">
+                    <i class="zmdi zmdi-edit"></i>
+                </a>
+                <img src="/images/pic/@user.Avatar" alt="@user.Avatar">
+            </div>
+            <div class="detail">
+                <span> @user.UserName </span>
+                <span> عضویت : @user.RegisterDate.ToShamsi() </span>
+            </div>
+        </div>
+
+        <section>
+            <header>
+                <h3> میز کار </h3>
+            </header>
+            <div class="inner">
+                <ul>
+                    <li>
+                        <a href=""> مشاهده حساب کابری </a>
+                    </li>
+                    <li>
+                        <a href=""> ویرایش حساب کابری </a>
+                    </li>
+                    <li>
+                        <a href=""> تغییر رمز عبور </a>
+                    </li>
+                    <li>
+                        <a href=""> تنظیمات حساب کاربری </a>
+                    </li>
+                    <li>
+                        <a href=""> خروج از حساب کاربری </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </aside>
+</div>
