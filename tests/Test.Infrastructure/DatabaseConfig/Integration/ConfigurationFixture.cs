@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Xunit;
 
-namespace Test.Infrastructure.Database.Integration;
+namespace Test.Infrastructure.DatabaseConfig.Integration;
 
 public class ConfigurationFixture
 {

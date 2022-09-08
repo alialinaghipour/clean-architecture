@@ -1,6 +1,6 @@
 ﻿using Persistence.Ef;
 
-namespace Test.Infrastructure.Database;
+namespace Test.Infrastructure.DatabaseConfig.Unit;
 
 public abstract class BasicUnitTest
 {

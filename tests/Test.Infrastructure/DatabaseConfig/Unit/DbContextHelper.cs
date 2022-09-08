@@ -1,7 +1,7 @@
 ﻿using Infrastructure.Tools;
 using Microsoft.EntityFrameworkCore;
 
-namespace Test.Infrastructure.Database;
+namespace Test.Infrastructure.DatabaseConfig.Unit;
 
 public static class DbContextHelper
 {

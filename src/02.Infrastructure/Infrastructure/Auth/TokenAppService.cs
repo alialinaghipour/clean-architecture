@@ -1,7 +1,6 @@
-﻿using Autofac.Core;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 
-namespace Infrastructure.Token;
+namespace Infrastructure.Auth;
 
 public class TokenAppService : ITokenService
 {

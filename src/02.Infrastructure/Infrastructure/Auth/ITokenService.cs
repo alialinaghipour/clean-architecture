@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Token;
+﻿namespace Infrastructure.Auth;
 
 public interface ITokenService
 {

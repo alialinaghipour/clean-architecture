@@ -2,7 +2,7 @@
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
-namespace Test.Infrastructure.Database;
+namespace Test.Infrastructure.DatabaseConfig.Unit;
 
 public class EfInMemoryDatabase : IDisposable
 {

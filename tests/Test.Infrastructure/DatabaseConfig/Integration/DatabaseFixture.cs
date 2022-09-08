@@ -1,6 +1,6 @@
 ﻿using System.Transactions;
 
-namespace Test.Infrastructure.Database.Integration;
+namespace Test.Infrastructure.DatabaseConfig.Integration;
 
 public class DatabaseFixture : IDisposable
 {

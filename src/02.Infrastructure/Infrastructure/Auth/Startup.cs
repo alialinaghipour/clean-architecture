@@ -1,6 +1,4 @@
-﻿using Infrastructure.Token;
-
-namespace Infrastructure.Auth;
+﻿namespace Infrastructure.Auth;
 
 internal static class Startup
 {

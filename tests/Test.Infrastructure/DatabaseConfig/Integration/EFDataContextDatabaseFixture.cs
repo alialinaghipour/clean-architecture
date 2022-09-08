@@ -1,7 +1,7 @@
 ﻿using Persistence.Ef;
 using Xunit;
 
-namespace Test.Infrastructure.Database.Integration;
+namespace Test.Infrastructure.DatabaseConfig.Integration;
 
 [Collection(nameof(ConfigurationFixture))]
 public class EFDataContextDatabaseFixture : DatabaseFixture
