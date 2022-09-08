@@ -9,6 +9,12 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser
     , ApplicationRoleClaim
     , ApplicationUserToken>
 {
+    public ApplicationDbContext(string connectionString)
+        : this(new DbContextOptionsBuilder<ApplicationDbContext>()
+            .UseSqlServer(connectionString).Options)
+    {
+    }
+
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {

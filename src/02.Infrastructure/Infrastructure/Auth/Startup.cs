@@ -1,14 +1,19 @@
-﻿namespace Infrastructure.Auth;
+﻿using Infrastructure.Token;
+
+namespace Infrastructure.Auth;
 
 internal static class Startup
 {
-    internal static IServiceCollection AddAuthApi(
+    internal static IServiceCollection AddAuthenticationApi(
         this IServiceCollection services,
         IConfiguration config)
     {
-        var jwtSection = config.GetSection("JwtBearerTokenSettings");
-        services.Configure<JwtBearerTokenSettings>(jwtSection);
-        var jwtBearerTokenSettings = jwtSection.Get<JwtBearerTokenSettings>();
+        services.AddScoped<TokenSettings>();
+        services.AddScoped<ITokenService, TokenAppService>();
+
+        var jwtSection = config.GetSection(nameof(TokenSettings));
+        services.Configure<TokenSettings>(jwtSection);
+        var jwtBearerTokenSettings = jwtSection.Get<TokenSettings>();
         var key = Encoding.ASCII.GetBytes(jwtBearerTokenSettings.SecretKey);
 
         services.AddAuthentication(options =>
@@ -33,7 +38,6 @@ internal static class Startup
                 ClockSkew = TimeSpan.Zero
             };
         });
-
 
         return services;
     }

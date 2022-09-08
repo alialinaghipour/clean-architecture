@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.Swagger;
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace Infrastructure.Swagger;
 
 internal static class Startup
 {

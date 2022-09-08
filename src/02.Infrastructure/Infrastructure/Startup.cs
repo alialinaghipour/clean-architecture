@@ -13,11 +13,11 @@ public static class Startup
         IConfiguration config)
     {
         return services
+            .AddPersistence(config)
             .AddAspIdentityApi()
-            .AddAuthApi(config)
+            .AddAuthenticationApi(config)
             .AddCorsPolicy()
             .AddMessageSenderService()
-            .AddPersistence(config)
             .AddHealth()
             .AddRoutingInfo()
             .AddUserInfoIdentity()
