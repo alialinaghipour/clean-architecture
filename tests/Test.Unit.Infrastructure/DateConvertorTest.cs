@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using Infrastructure.Convertor;
+using Infrastructure.Tools.Convertor;
 
 namespace Test.Unit.Infrastructure;
 

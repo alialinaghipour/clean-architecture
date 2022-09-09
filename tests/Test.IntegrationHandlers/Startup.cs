@@ -1,8 +1,8 @@
 ﻿using ApplicationHandlerContracts.UserLogin;
 using ApplicationServiceHandlers.CreateMemberAndUser;
 using ApplicationServiceHandlers.UserLogin;
-using Infrastructure.Auth;
-using Infrastructure.Services;
+using Infrastructure.EndPointConfig.Auth;
+using Infrastructure.EndPointConfig.Services;
 
 namespace Test.IntegrationHandlers;
 
