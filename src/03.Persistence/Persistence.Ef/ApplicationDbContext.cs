@@ -1,13 +1,13 @@
 ﻿namespace Persistence.Ef;
 
-public class ApplicationDbContext : IdentityDbContext<ApplicationUser
-    , ApplicationRole
+public class ApplicationDbContext : IdentityDbContext<User
+    , Role
     , string
-    , ApplicationUserClaim
-    , ApplicationUserRole
-    , ApplicationUserLogin
-    , ApplicationRoleClaim
-    , ApplicationUserToken>
+    , UserClaim
+    , UserRole
+    , UserLogin
+    , RoleClaim
+    , UserToken>
 {
     public ApplicationDbContext(string connectionString)
         : this(new DbContextOptionsBuilder<ApplicationDbContext>()

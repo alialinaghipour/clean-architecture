@@ -3,17 +3,17 @@
 public interface ISignInManagementService
 {
     Task SignOut();
-    Task SignIn(ApplicationUser user);
+    Task SignIn(User user);
     bool IsSignIn(ClaimsPrincipal user);
     Task PasswordSignIn(PasswordSignInDto dto);
 }
 
 public class SignInManagementAppService : ISignInManagementService
 {
-    private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly SignInManager<User> _signInManager;
 
     public SignInManagementAppService(
-        SignInManager<ApplicationUser> signInManager)
+        SignInManager<User> signInManager)
     {
         _signInManager = signInManager;
     }
@@ -23,7 +23,7 @@ public class SignInManagementAppService : ISignInManagementService
         await _signInManager.SignOutAsync();
     }
 
-    public async Task SignIn(ApplicationUser user)
+    public async Task SignIn(User user)
     {
         await _signInManager.SignInAsync(user, true);
     }

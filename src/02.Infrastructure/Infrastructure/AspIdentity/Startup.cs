@@ -5,12 +5,9 @@ internal static class Startup
     internal static IServiceCollection AddAspIdentityApi(
         this IServiceCollection services)
     {
-        services.AddScoped<IUserManagementService, UserManagementAppService>();
-        services
-            .AddScoped<ISignInManagementService, SignInManagementAppService>();
 
         services
-            .AddIdentity<ApplicationUser, ApplicationRole>(option =>
+            .AddIdentity<User, Role>(option =>
             {
                 option.Password.RequireNonAlphanumeric = false;
                 option.Password.RequireLowercase = false;
@@ -21,6 +18,8 @@ internal static class Startup
                 option.Lockout.AllowedForNewUsers = false;
             }).AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
+        
+        
 
         return services;
     }

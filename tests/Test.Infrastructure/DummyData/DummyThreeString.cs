@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Test.Infrastructure.Factory.Dummies;
 using Xunit.Sdk;
 
 namespace Test.Infrastructure.DummyData;
@@ -7,14 +8,10 @@ public class DummyThreeString : DataAttribute
 {
     public override IEnumerable<object[]> GetData(MethodInfo testMethod)
     {
+        var first = DummyFactory.GenerateDummyString();
+        var second = DummyFactory.GenerateDummyString();
+        var three = DummyFactory.GenerateDummyString();
         return new[]
-        {
-            new object[]
-            {
-                "dummy_string_first",
-                "dummy_string_second",
-                "dummy_string_three"
-            }
-        };
+            {new object[] {first, second, three}};
     }
 }

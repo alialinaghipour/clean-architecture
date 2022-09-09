@@ -2,10 +2,10 @@
 
 internal class
     ApplicationUserClaimEntityMap : IEntityTypeConfiguration<
-        ApplicationUserClaim>
+        UserClaim>
 {
-    public void Configure(EntityTypeBuilder<ApplicationUserClaim> builder)
+    public void Configure(EntityTypeBuilder<UserClaim> builder)
     {
-        builder.ToTable("ApplicationUserClaims");
+        builder.ToTable("UserClaims");
     }
 }

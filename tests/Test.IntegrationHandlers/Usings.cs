@@ -1,0 +1,14 @@
+global using Xunit;
+global using ApplicationHandlerContracts.CreateMemberAndUser;
+global using Domain.Members;
+global using Microsoft.EntityFrameworkCore;
+global using Persistence.Ef;
+global using FluentAssertions;
+global using Test.Infrastructure.Builder.Members;
+global using ApplicationContracts.Contracts;
+global using ApplicationContracts.Members;
+global using ApplicationServices.Members;
+global using Identity;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.Extensions.DependencyInjection;
+global using Persistence.Ef.Members;

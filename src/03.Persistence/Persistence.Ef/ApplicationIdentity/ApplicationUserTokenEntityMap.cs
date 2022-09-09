@@ -2,10 +2,10 @@
 
 public class
     ApplicationUserTokenEntityMap : IEntityTypeConfiguration<
-        ApplicationUserToken>
+        UserToken>
 {
-    public void Configure(EntityTypeBuilder<ApplicationUserToken> builder)
+    public void Configure(EntityTypeBuilder<UserToken> builder)
     {
-        builder.ToTable("ApplicationUserTokens");
+        builder.ToTable("UserTokens");
     }
 }

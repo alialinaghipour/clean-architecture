@@ -6,9 +6,6 @@ internal static class Startup
         this IServiceCollection services,
         IConfiguration config)
     {
-        services.AddScoped<TokenSettings>();
-        services.AddScoped<ITokenService, TokenAppService>();
-
         var jwtSection = config.GetSection(nameof(TokenSettings));
         services.Configure<TokenSettings>(jwtSection);
         var jwtBearerTokenSettings = jwtSection.Get<TokenSettings>();

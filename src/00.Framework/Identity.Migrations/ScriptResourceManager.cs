@@ -9,7 +9,7 @@ public class ScriptResourceManager
 
         var resourcePath = $"{resourcesBasePath}.{name}";
         using var stream = assembly.GetManifestResourceStream(resourcePath);
-        using var reader = new StreamReader(stream);
+        using var reader = new StreamReader(stream!);
         return reader.ReadToEnd();
     }
 }

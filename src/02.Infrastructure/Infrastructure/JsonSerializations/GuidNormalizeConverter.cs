@@ -7,7 +7,7 @@ internal class GuidNormalizeConverter : JsonConverter<Guid>
         Type typeToConvert,
         JsonSerializerOptions options)
     {
-        return new Guid(reader.GetString());
+        return new Guid(reader.GetString()!);
     }
 
     public override void Write(
@@ -25,7 +25,7 @@ internal class TimeSpanConverter : JsonConverter<TimeSpan>
         Type typeToConvert, JsonSerializerOptions options)
     {
         var splitTimeSpan = reader.GetString()
-            .Split(":");
+            !.Split(":");
 
         return new TimeSpan(int.Parse(splitTimeSpan[0])
             , int.Parse(splitTimeSpan[1])

@@ -1,29 +1,37 @@
-﻿using System.Security.Claims;
-using Infrastructure.Auth;
-using Infrastructure.Token;
+﻿using ApplicationHandlerContracts.CreateMemberAndUser;
+using ApplicationHandlerContracts.UserLogin;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RestApi.Controllers;
 
 [ApiController]
 [Route("api/accounts")]
+[Authorize]
 public class AccountController : ControllerBase
 {
-    private readonly ITokenService _tokenService;
+    private readonly ICreateMemberAndUserHandler _createMemberAndUserHandler;
+    private readonly IUserLoginAndCreateTokenServiceHandler _loginAndCreateTokenServiceHandler;
 
-    public AccountController(ITokenService tokenService)
+    public AccountController(
+        ICreateMemberAndUserHandler createMemberAndUserHandler,
+        IUserLoginAndCreateTokenServiceHandler loginAndCreateTokenServiceHandler)
     {
-        _tokenService = tokenService;
+        _createMemberAndUserHandler = createMemberAndUserHandler;
+        _loginAndCreateTokenServiceHandler = loginAndCreateTokenServiceHandler;
     }
 
-    [HttpGet("token")]
-    public IActionResult CreateToken()
+    [HttpPost("register")]
+    [AllowAnonymous]
+    public async Task Register(CreateMemberAndUserDto dto)
     {
-        // for tests
-        var token = _tokenService
-            .Create(new List<Claim>(),
-                new List<string>(),
-                "1");
-        return Content(token);
+        await _createMemberAndUserHandler.Create(dto);
+    }
+
+    [HttpPost("login")]
+    [AllowAnonymous]
+    public async Task<string> Login(UserLoginDto dto)
+    {
+        return await _loginAndCreateTokenServiceHandler.Login(dto);
     }
 }

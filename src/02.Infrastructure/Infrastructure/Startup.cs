@@ -18,10 +18,10 @@ public static class Startup
             .AddAuthenticationApi(config)
             .AddCorsPolicy()
             .AddMessageSenderService()
-            .AddHealth()
+           // .AddHealth()
             .AddRoutingInfo()
             .AddUserInfoIdentity()
-            .AddServicesScoped()
+            .AddServicesScoped(config)
             .AddCustomSwagger();
     }
 
@@ -30,7 +30,7 @@ public static class Startup
     {
         return builder
             .UseCorsPolicy()
-            .UseHealth()
+           // .UseHealth()
             .UseCulture()
             .UseEnvelope()
             .UseCustomSwagger()

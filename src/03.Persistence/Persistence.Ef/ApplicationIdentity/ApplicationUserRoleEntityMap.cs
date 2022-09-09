@@ -2,10 +2,10 @@
 
 public class
     ApplicationUserRoleEntityMap : IEntityTypeConfiguration<
-        ApplicationUserRole>
+        UserRole>
 {
-    public void Configure(EntityTypeBuilder<ApplicationUserRole> builder)
+    public void Configure(EntityTypeBuilder<UserRole> builder)
     {
-        builder.ToTable("ApplicationUserRoles");
+        builder.ToTable("UserRoles");
     }
 }

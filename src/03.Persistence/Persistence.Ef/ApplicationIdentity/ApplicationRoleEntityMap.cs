@@ -1,10 +1,10 @@
 ﻿namespace Persistence.Ef.ApplicationIdentity;
 
 public class
-    ApplicationRoleEntityMap : IEntityTypeConfiguration<ApplicationRole>
+    ApplicationRoleEntityMap : IEntityTypeConfiguration<Role>
 {
-    public void Configure(EntityTypeBuilder<ApplicationRole> builder)
+    public void Configure(EntityTypeBuilder<Role> builder)
     {
-        builder.ToTable("ApplicationRoles");
+        builder.ToTable("Roles");
     }
 }

@@ -6,8 +6,6 @@ internal static class Startup
         this IServiceCollection services)
     {
         services.AddHttpContextAccessor();
-        services.AddScoped<IUserInfoIdentity, HttpContextUserInfoIdentity>();
-
         return services;
     }
 }

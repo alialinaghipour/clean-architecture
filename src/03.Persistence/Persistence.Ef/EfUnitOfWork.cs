@@ -9,12 +9,12 @@ public class EfUnitOfWork : IUnitOfWork
         _dataContext = dataContext;
     }
 
-    public async Task Begin()
+    public async Task BeginTransaction()
     {
         await _dataContext.Database.BeginTransactionAsync();
     }
 
-    public async Task Commit()
+    public async Task CommitTransaction()
     {
         await _dataContext.SaveChangesAsync();
         await _dataContext.Database.CommitTransactionAsync();
@@ -25,7 +25,7 @@ public class EfUnitOfWork : IUnitOfWork
         await _dataContext.SaveChangesAsync();
     }
 
-    public async Task Rollback()
+    public async Task RollbackTransaction()
     {
         await _dataContext.Database.RollbackTransactionAsync();
     }

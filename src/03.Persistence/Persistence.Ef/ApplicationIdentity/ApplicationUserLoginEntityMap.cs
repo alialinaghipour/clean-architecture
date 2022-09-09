@@ -2,10 +2,10 @@
 
 public class
     ApplicationUserLoginEntityMap : IEntityTypeConfiguration<
-        ApplicationUserLogin>
+        UserLogin>
 {
-    public void Configure(EntityTypeBuilder<ApplicationUserLogin> builder)
+    public void Configure(EntityTypeBuilder<UserLogin> builder)
     {
-        builder.ToTable("ApplicationUserLogins");
+        builder.ToTable("UserLogins");
     }
 }

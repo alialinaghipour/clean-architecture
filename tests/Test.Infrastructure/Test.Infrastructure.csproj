@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.7.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.6" />
         <PackageReference Include="Moq" Version="4.18.1" />
         <PackageReference Include="NuGet.DependencyResolver.Core" Version="5.11.0" />
@@ -14,6 +15,8 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\src\01.Core\ApplicationHandlerContracts\ApplicationHandlerContracts.csproj" />
+        <ProjectReference Include="..\..\src\01.Core\ApplicationServiceHandlers\ApplicationServiceHandlers.csproj" />
         <ProjectReference Include="..\..\src\02.Infrastructure\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 

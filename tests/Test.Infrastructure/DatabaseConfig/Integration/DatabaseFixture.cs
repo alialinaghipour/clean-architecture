@@ -6,7 +6,7 @@ public class DatabaseFixture : IDisposable
 {
     private readonly TransactionScope _transactionScope;
 
-    public DatabaseFixture()
+    protected DatabaseFixture()
     {
         _transactionScope = new TransactionScope(
             TransactionScopeOption.Required,

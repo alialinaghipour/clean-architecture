@@ -28,7 +28,5 @@ global using Infrastructure.Cultures;
 global using Infrastructure.Envelopes;
 global using Infrastructure.HealthChecks;
 global using Infrastructure.Routing;
-global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Mvc.ApiExplorer;
-global using Microsoft.Extensions.Hosting;
 global using Microsoft.OpenApi.Models;

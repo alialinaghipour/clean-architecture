@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\00.Framework\Identity\Identity.csproj" />
+      <ProjectReference Include="..\ApplicationHandlerContracts\ApplicationHandlerContracts.csproj" />
+      <ProjectReference Include="..\ApplicationServiceContracts\ApplicationServiceContracts.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,18 +1,33 @@
 ﻿namespace Persistence.Ef.ApplicationIdentity;
 
 public class ApplicationUserEntityMap
-    : IEntityTypeConfiguration<ApplicationUser>
+    : IEntityTypeConfiguration<User>
 {
-    public void Configure(EntityTypeBuilder<ApplicationUser> builder)
+    public void Configure(EntityTypeBuilder<User> builder)
     {
-        builder.ToTable("ApplicationUsers");
-        builder.HasKey(_ => _.Id);
-        builder.Property(_ => _.Id).ValueGeneratedNever();
+        builder
+            .ToTable("Users");
+        
+        builder
+            .HasKey(_ => _.Id);
+        
+        builder
+            .Property(_ => _.Id)
+            .ValueGeneratedNever()
+            .HasMaxLength(450);
 
-        builder.Property(_ => _.UserName)
+        builder
+            .Property(_ => _.UserName)
+            .IsRequired()
             .HasMaxLength(50);
 
-        builder.Property(_ => _.NormalizedUserName)
+        builder
+            .Property(_ => _.NormalizedUserName)
+            .IsRequired()
             .HasMaxLength(50);
+
+        builder
+            .Property(_ => _.PhoneNumber)
+            .IsRequired(false);
     }
 }

@@ -2,10 +2,10 @@
 
 public class
     ApplicationRoleClaimEntityMap : IEntityTypeConfiguration<
-        ApplicationRoleClaim>
+        RoleClaim>
 {
-    public void Configure(EntityTypeBuilder<ApplicationRoleClaim> builder)
+    public void Configure(EntityTypeBuilder<RoleClaim> builder)
     {
-        builder.ToTable("ApplicationRoleClaims");
+        builder.ToTable("RoleClaims");
     }
 }
