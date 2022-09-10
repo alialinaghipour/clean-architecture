@@ -1,29 +1,16 @@
-﻿using ApplicationServices.Members;
-using Autofac;
-
+﻿
 namespace Infrastructure.EndPointConfig.Services;
 
-public static class ConfigAutofac
+internal static class ConfigAutofac
 {
-   public static void ConfigureContainer(
-       ContainerBuilder container,
-       ConfigurationManager configuration)
-    {
-        container.RegisterAssemblyTypes(typeof(MemberAppService).Assembly)
-            .AssignableTo<IScoped>()
-            .AsImplementedInterfaces()
-            .InstancePerLifetimeScope();
-        
-        container.RegisterAssemblyTypes(typeof(DateTimeAppService).Assembly)
-            .AssignableTo<ISingleton>()
-            .AsImplementedInterfaces()
-            .InstancePerLifetimeScope();
-        
-        container.RegisterType<ApplicationDbContext>()
-            .WithParameter("SqlServer",configuration
-                .GetConnectionString("SqlServer"))
-            .AsSelf()
-            .InstancePerLifetimeScope();
-        
-    }
+   internal static ConfigureHostBuilder AddConfigAutofac(
+      this ConfigureHostBuilder builder,
+      IConfiguration configuration)
+   {
+      builder.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+      builder.ConfigureContainer<ContainerBuilder>(b =>
+         b.RegisterModule(new AutofacBusinessModule(configuration))
+      );
+      return builder;
+   }
 }

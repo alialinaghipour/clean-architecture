@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.EndPointConfig.Services;
+﻿namespace Infrastructure.Tools;
 
 public class GenerateCodeAppService : IGenerateCodeService
 {

@@ -42,7 +42,7 @@ public class UserLoginServiceTests : UserFixture
         var token = DummyFactory.GenerateDummyString();
         _tokenServiceMock.SetupCreateMethod(user.Id,token);
         
-        var expected = await LoginAndCreateTokenServiceHandler.Login(dto);
+        var expected = await LoginAndCreateTokenServiceHandler.LoginApi(dto);
 
         expected.Should().Be(token);
         _tokenServiceMock.VerifyCreateMethod(user.Id);
@@ -53,7 +53,7 @@ public class UserLoginServiceTests : UserFixture
     {
         var dto = UserLoginDtoFactory.Generate();
 
-        var expected = () => LoginAndCreateTokenServiceHandler.Login(dto);
+        var expected = () => LoginAndCreateTokenServiceHandler.LoginApi(dto);
 
         await expected.Should()
             .ThrowExactlyAsync<WrongUsernameOrPasswordException>();
@@ -68,7 +68,7 @@ public class UserLoginServiceTests : UserFixture
             .Build();
         Context.Save(user);
 
-        var expected = () => LoginAndCreateTokenServiceHandler.Login(dto);
+        var expected = () => LoginAndCreateTokenServiceHandler.LoginApi(dto);
 
         await expected.Should()
             .ThrowExactlyAsync<WrongUsernameOrPasswordException>();

@@ -1,17 +1,4 @@
-﻿using ApplicationContracts.Contracts.Sender;
-using ApplicationContracts.Members;
-using ApplicationHandlerContracts.CreateMemberAndUser;
-using ApplicationHandlerContracts.UserLogin;
-using ApplicationServiceHandlers.CreateMemberAndUser;
-using ApplicationServiceHandlers.UserLogin;
-using ApplicationServices.Members;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using Infrastructure.EndPointConfig.Auth;
-using Infrastructure.EndPointConfig.Sender;
-using Infrastructure.EndPointConfig.UserIdentity;
-using Microsoft.EntityFrameworkCore;
-using Persistence.Ef.Members;
+﻿using Infrastructure.Tools;
 
 namespace Infrastructure.EndPointConfig.Services;
 
@@ -39,8 +26,6 @@ internal static class Startup
             option.UseSqlServer(config
                 .GetConnectionString("SqlServer"));
         });
-        services
-            .AddScoped<IMessageSenderService, MessageSenderAppService>();
         services
             .AddScoped<IUserInfoIdentity, HttpContextUserInfoIdentity>();
         services

@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Test.Infrastructure.DatabaseConfig.Unit;
+﻿using Test.Infrastructure.DatabaseConfig.Unit;
 using Test.Infrastructure.DummyData;
 using Test.Infrastructure.Factory.Members;
 using Test.Infrastructure.Factory.Members.Dto;
@@ -11,7 +10,7 @@ public class MemberServiceTest : DatabaseConfigUnitTest
 {
     [Theory]
     [DummyThreeString]
-    public async Task Create_create_member_properly(
+    public void Create_create_member_properly(
         string id,
         string firstName,
         string lastName)
@@ -21,7 +20,7 @@ public class MemberServiceTest : DatabaseConfigUnitTest
         repository.SetupAddMember(id,firstName,lastName);
         var sut = MemberServiceFactory.Create(ActContext(), repository.Object);
 
-        await sut.Create(dto);
+        sut.Create(dto);
         
         repository.VerifyAddMember(id,firstName,lastName);
     }

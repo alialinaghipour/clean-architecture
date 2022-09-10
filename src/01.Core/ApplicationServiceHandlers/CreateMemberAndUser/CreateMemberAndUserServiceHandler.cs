@@ -31,7 +31,7 @@ public class CreateMemberAndUserServiceHandler : ICreateMemberAndUserHandler
         try
         {
             var user = await CreateUser(dto);
-            await CreateMember(dto, user.Id);
+             CreateMember(dto, user.Id);
             await _unitOfWork.CommitTransaction();
         }
         catch
@@ -41,7 +41,7 @@ public class CreateMemberAndUserServiceHandler : ICreateMemberAndUserHandler
         }
     }
 
-    private async Task CreateMember(CreateMemberAndUserDto dto, string id)
+    private void CreateMember(CreateMemberAndUserDto dto, string id)
     {
         var createMemberDto = new CreateMemberDto
         {
@@ -50,7 +50,7 @@ public class CreateMemberAndUserServiceHandler : ICreateMemberAndUserHandler
             LastName = dto.LastName,
             Email = dto.Email,
         };
-        await _memberService.Create(createMemberDto);
+         _memberService.Create(createMemberDto);
     }
 
     private async Task<User> CreateUser(CreateMemberAndUserDto dto)
@@ -64,7 +64,7 @@ public class CreateMemberAndUserServiceHandler : ICreateMemberAndUserHandler
         };
         await _userManagementService.Create(
             user,
-            password: user.Email);
+            password: dto.Password);
         return user;
     }
 }

@@ -14,12 +14,13 @@ public class UserLoginAndCreateTokenAppServiceHandler
 
     public UserLoginAndCreateTokenAppServiceHandler(
         IUserManagementService userManagementService,
-        ITokenService tokenService)
+        ITokenService tokenService
+       )
     {
         _userManagementService = userManagementService;
         _tokenService = tokenService;
     }
-    public async Task<string> Login(UserLoginDto dto)
+    public async Task<string> LoginApi(UserLoginDto dto)
     {
         var user = await _userManagementService.FindByUsername(dto.UserName);
         if (user.IsBlank())
@@ -36,5 +37,17 @@ public class UserLoginAndCreateTokenAppServiceHandler
         var token = _tokenService.Create(claims, roles, user!.Id);
 
         return token;
+    }
+
+    public async Task LoginWeb(UserLoginDto dto)
+    {
+        var user = await _userManagementService.FindByUsername(dto.UserName);
+        if (user.IsBlank())
+            throw new WrongUsernameOrPasswordException();
+
+        var checkedPassword = await _userManagementService
+            .CheckPassword(user!, dto.Password);
+        if (!checkedPassword)
+            throw new WrongUsernameOrPasswordException();
     }
 }

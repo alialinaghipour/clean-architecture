@@ -1,5 +1,6 @@
 ﻿using ApplicationContracts.Contracts;
 using Infrastructure.EndPointConfig.Services;
+using Infrastructure.Tools;
 using Moq;
 
 namespace Test.Infrastructure.Factory.GenerateCode;

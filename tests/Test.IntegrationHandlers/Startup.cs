@@ -3,6 +3,7 @@ using ApplicationServiceHandlers.CreateMemberAndUser;
 using ApplicationServiceHandlers.UserLogin;
 using Infrastructure.EndPointConfig.Auth;
 using Infrastructure.EndPointConfig.Services;
+using Infrastructure.Tools;
 
 namespace Test.IntegrationHandlers;
 

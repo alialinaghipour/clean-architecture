@@ -5,5 +5,5 @@ namespace ApplicationContracts.Members;
 
 public interface IMemberService : IScoped
 {
-    Task Create(CreateMemberDto dto);
+    void Create(CreateMemberDto dto);
 }

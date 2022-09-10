@@ -11,4 +11,8 @@
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\01.Core\ApplicationServiceContracts\ApplicationServiceContracts.csproj" />
+    </ItemGroup>
+
 </Project>

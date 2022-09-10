@@ -1,0 +1,17 @@
+﻿global using Autofac;
+global using Autofac.Extensions.DependencyInjection;
+global using Infrastructure.EndPointConfig;
+global using RestApi;
+global using ApplicationContracts.Contracts;
+global using ApplicationServiceHandlers.UserLogin;
+global using ApplicationServices.Members;
+global using Identity;
+global using Infrastructure.EndPointConfig.Auth;
+global using Infrastructure.EndPointConfig.Services;
+global using Persistence.Ef;
+global using Persistence.Ef.Members;
+global using RestApi.Controllers;
+global using ApplicationHandlerContracts.CreateMemberAndUser;
+global using ApplicationHandlerContracts.UserLogin;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;

@@ -1,0 +1,36 @@
+﻿@inject ISignInManagementService _signInManagementService
+@using Identity
+@model List<Identity.User>
+
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@if (_signInManagementService.IsSignIn(User))
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">نام کاربری </th>
+            <th scope="col">ایمیل</th>
+            <th scope="col">#</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+

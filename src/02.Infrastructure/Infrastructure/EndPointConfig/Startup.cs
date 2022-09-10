@@ -1,56 +1,61 @@
-﻿using Infrastructure.EndPointConfig.AspIdentity;
-using Infrastructure.EndPointConfig.Auth;
-using Infrastructure.EndPointConfig.Cors;
-using Infrastructure.EndPointConfig.Cultures;
-using Infrastructure.EndPointConfig.Envelopes;
-using Infrastructure.EndPointConfig.HealthChecks;
-using Infrastructure.EndPointConfig.Persistence;
-using Infrastructure.EndPointConfig.Routing;
-using Infrastructure.EndPointConfig.Sender;
-using Infrastructure.EndPointConfig.Servers;
-using Infrastructure.EndPointConfig.Services;
-using Infrastructure.EndPointConfig.Swagger;
-using Infrastructure.EndPointConfig.UserIdentity;
-
-namespace Infrastructure.EndPointConfig;
+﻿namespace Infrastructure.EndPointConfig;
 
 public static class Startup
 {
-    public static IServiceCollection AddInfrastructure(
+    public static IServiceCollection AddInfrastructureApi(
         this IServiceCollection services,
         IConfiguration config)
     {
         return services
-            .AddPersistence(config)
             .AddAspIdentityApi()
             .AddAuthenticationApi(config)
             .AddCorsPolicy()
-            .AddMessageSenderService()
             .AddHealth()
-            .AddRoutingInfo()
+            .AddRoutingInfoApi()
             .AddUserInfoIdentity()
-            .AddServicesScoped(config)
             .AddCustomSwagger();
     }
 
-    public static IApplicationBuilder UseInfrastructure(
+    public static ConfigureHostBuilder AddConfigHost(
+        this ConfigureHostBuilder builder,
+        IConfiguration config)
+    {
+        return builder.AddConfigAutofac(config);
+    }
+
+    public static IServiceCollection AddInfrastructureWeb(
+        this IServiceCollection services)
+    {
+        return services
+            .AddAspIdentityApi()
+            .AddRoutingInfoWeb();
+    }
+
+    public static IApplicationBuilder UseInfrastructureApi(
         this IApplicationBuilder builder, IConfiguration config)
     {
         return builder
             .UseCorsPolicy()
-           // .UseHealth()
             .UseCulture()
-            .UseEnvelope()
+            .UseEnvelopeApi()
             .UseCustomSwagger()
             .UseHttpsRedirection()
-            .UseStaticFiles()
-            .UseRouting()
             .UseCorsPolicy()
-            .UseRoutingInfo()
+            .UseRoutingInfoApi()
             .UseCustomSwagger();
     }
 
-    public static IWebHostBuilder UseInfrastructure(
+    public static IApplicationBuilder UseInfrastructureWeb(
+        this IApplicationBuilder builder, IConfiguration config)
+    {
+        return builder
+            .UseHttpsRedirection()
+            .UseEnvelopeWeb()
+            .UseStaticFiles()
+            .UseRoutingInfoWeb();
+    }
+
+    public static IWebHostBuilder UseInfrastructureApi(
         this IWebHostBuilder builder,
         IConfiguration config)
     {

@@ -1,24 +1,17 @@
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using Infrastructure;
-using Infrastructure.EndPointConfig;
-using Infrastructure.EndPointConfig.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
 
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 var services = builder.Services;
-services.AddControllers();
 services.AddEndpointsApiExplorer();
-services.AddInfrastructure(configuration);
+services.AddInfrastructureApi(configuration);
 
-ConfigAutofac.ConfigureContainer(new ContainerBuilder(),configuration);
+builder.Host.AddConfigHost(configuration);
 
 var web = builder.WebHost;
-web.UseInfrastructure(configuration);
+web.UseInfrastructureApi(configuration);
 
 var app = builder.Build();
-app.UseInfrastructure(configuration);
+app.UseInfrastructureApi(configuration);
 app.Run();

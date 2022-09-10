@@ -1,6 +1,10 @@
-﻿namespace Identity;
+﻿using System.Security.Claims;
+using ApplicationContracts.Contracts;
+using Identity.Dto;
 
-public interface IUserManagementService
+namespace Identity;
+
+public interface IUserManagementService : IScoped
 {
     Task ConfirmEmail(User user, string token);
     Task<string> GenerateEmailConfirmationToken(User user);

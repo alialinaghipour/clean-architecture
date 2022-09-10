@@ -16,7 +16,7 @@ public class MemberAppService : IMemberService
         _repository = repository;
     }
     
-    public async Task Create(CreateMemberDto dto)
+    public void Create(CreateMemberDto dto)
     {
         var member = new Member()
         {

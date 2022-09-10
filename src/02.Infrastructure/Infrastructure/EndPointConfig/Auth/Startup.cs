@@ -1,4 +1,6 @@
-﻿namespace Infrastructure.EndPointConfig.Auth;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+
+namespace Infrastructure.EndPointConfig.Auth;
 
 internal static class Startup
 {
@@ -32,6 +34,26 @@ internal static class Startup
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero
             };
+        });
+
+        return services;
+    }
+    
+    internal static IServiceCollection AddAuthenticationWeb(
+        this IServiceCollection services)
+    {
+        services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            options.DefaultSignInScheme= CookieAuthenticationDefaults.AuthenticationScheme;
+
+        }).AddCookie(options =>
+        {
+            options.LoginPath = "/Login";
+            options.LogoutPath = "/Logout";
+            options.ExpireTimeSpan=TimeSpan.FromMinutes(43200);
+
         });
 
         return services;

@@ -4,5 +4,6 @@ namespace ApplicationHandlerContracts.UserLogin;
 
 public interface IUserLoginAndCreateTokenServiceHandler : IScoped
 {
-    Task<string> Login(UserLoginDto dto);
+    Task<string> LoginApi(UserLoginDto dto);
+    Task LoginWeb(UserLoginDto dto);
 }
