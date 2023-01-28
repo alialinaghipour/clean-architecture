@@ -51,7 +51,7 @@ public class MemberAndUserServiceTests : UserFixture
         var user = new UserBuilder().Build();
         Context.Save(user);
         var dto = new CreateMemberAndUserDtoBuilder()
-            .WithEmail(user.Email)
+            .WithEmail(user.Email!)
             .Build();
 
         var expected = async () => await CreateMemberAndUserHandler.Create(dto);

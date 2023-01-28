@@ -41,7 +41,7 @@ public class AutofacBusinessModule : Module
             .InstancePerLifetimeScope();
 
         var connectionString = _configuration
-            .GetValue<string>("dbConnectionStrings");
+            .GetValue<string>("dbConnectionStrings")!;
         container.RegisterType<ApplicationDbContext>()
             .WithParameter("dbConnectionStrings", connectionString)
             .AsSelf()

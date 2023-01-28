@@ -1,0 +1,10 @@
+﻿global using Persistence.Ef;
+global using Test.Infrastructure.DatabaseConfig.Unit;
+global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using Xunit;
+global using Microsoft.EntityFrameworkCore;
+global using Test.Infrastructure.Factory.AppContext;

@@ -4,11 +4,11 @@ using Xunit;
 namespace Test.Infrastructure.DatabaseConfig.Integration;
 
 [Collection(nameof(ConfigurationFixture))]
-public class EFDataContextDatabaseFixture : DatabaseFixture
+public class ApplicationDbContextDatabaseFixture : DatabaseFixture
 {
     private readonly ConfigurationFixture _configuration;
 
-    protected EFDataContextDatabaseFixture(ConfigurationFixture configuration)
+    protected ApplicationDbContextDatabaseFixture(ConfigurationFixture configuration)
     {
         _configuration = configuration;
     }

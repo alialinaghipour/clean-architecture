@@ -20,7 +20,7 @@ public interface IUserManagementService : IScoped
     Task<bool> IsInRole(User user, string role);
     Task<User?> FindByUsername(string username);
     Task<string?> GetUserIdById(string id);
-    Task<User> FindByEmail(string email);
+    Task<User?> FindByEmail(string email);
     Task AddToRole(User user, string role);
     Task<User> FindById(string id);
     Task Delete(User user);

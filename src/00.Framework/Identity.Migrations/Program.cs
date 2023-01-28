@@ -1,15 +1,8 @@
-﻿using System.Data.SqlClient;
-using FluentMigrator.Runner;
-using Identity.Migrations;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-var options = GetSettings(args, Directory.GetCurrentDirectory());
+﻿var options = GetSettings(args, Directory.GetCurrentDirectory());
 var connectionString = options.ConnectionString;
 CreateDatabase(connectionString);
 
 var runner = CreateRunner(connectionString, options);
-runner.MigrateDown(0);
 runner.MigrateUp();
 
 static void CreateDatabase(string connectionString)
@@ -42,7 +35,7 @@ static string ChangeDatabaseName(string connectionString,
 
 static string GetDatabaseName(string connectionString)
 {
-    return new SqlConnectionStringBuilder(connectionString)
+    return new SqlConnectionStringBuilder (connectionString)
         .InitialCatalog;
 }
 
@@ -75,7 +68,7 @@ static MigrationSettings GetSettings(string[] args,
     var settings = new MigrationSettings
     {
         ConnectionString =
-            configurations.GetValue<string>("ConnectionString")
+            configurations.GetValue<string>("ConnectionString")!
     };
     return settings;
 }

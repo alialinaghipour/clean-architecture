@@ -11,7 +11,7 @@ internal static class Startup
         var jwtSection = config.GetSection(nameof(TokenSettings));
         services.Configure<TokenSettings>(jwtSection);
         var jwtBearerTokenSettings = jwtSection.Get<TokenSettings>();
-        var key = Encoding.ASCII.GetBytes(jwtBearerTokenSettings.SecretKey);
+        var key = Encoding.ASCII.GetBytes(jwtBearerTokenSettings!.SecretKey);
 
         services.AddAuthentication(options =>
         {

@@ -20,7 +20,7 @@ public class UserManagementAppService : IUserManagementService
             .SingleOrDefaultAsync();
     }
 
-    public async Task<User> FindByEmail(string email)
+    public async Task<User?> FindByEmail(string email)
     {
         return await _userManager.FindByEmailAsync(email);
     }
@@ -107,7 +107,7 @@ public class UserManagementAppService : IUserManagementService
     {
         var user = await _userManager.FindByIdAsync(id);
         CheckUserExists(user);
-        return user;
+        return user!;
     }
 
     public async Task<User?> FindByUsername(string username)
@@ -154,7 +154,7 @@ public class UserManagementAppService : IUserManagementService
         var passwordVerifiedResult =
             _userManager.PasswordHasher.VerifyHashedPassword(
                 user,
-                user.PasswordHash,
+                user.PasswordHash!,
                 password);
 
         if (passwordVerifiedResult == PasswordVerificationResult.Success)

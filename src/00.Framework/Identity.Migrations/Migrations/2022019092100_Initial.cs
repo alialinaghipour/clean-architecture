@@ -1,5 +1,4 @@
-﻿using FluentMigrator;
-
+﻿
 namespace Identity.Migrations.Migrations
 {
     [Migration(2022019092100)]

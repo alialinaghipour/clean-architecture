@@ -7,7 +7,7 @@ public static class Startup
     {
         const string urlConfigKey = "url";
         if (config.GetSection(urlConfigKey).Exists())
-            host.UseUrls(config.GetValue<string>(urlConfigKey));
+            host.UseUrls(config.GetValue<string>(urlConfigKey)!);
 
         host.UseKestrel();
         host.UseIISIntegration();

@@ -19,7 +19,7 @@ public class TokenAppService : ITokenService
         var tokenHandler = new JwtSecurityTokenHandler();
         var tokenSection = _configuration.GetSection(nameof(TokenSettings));
         var tokenSettings = tokenSection.Get<TokenSettings>();
-        var key = Encoding.ASCII.GetBytes(tokenSettings.SecretKey);
+        var key = Encoding.ASCII.GetBytes(tokenSettings!.SecretKey);
   
 
         var tokenClaims = new ClaimsIdentity();

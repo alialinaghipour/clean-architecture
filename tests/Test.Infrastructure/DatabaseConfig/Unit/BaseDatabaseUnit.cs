@@ -4,7 +4,7 @@ namespace Test.Infrastructure.DatabaseConfig.Unit;
 
 public abstract class DatabaseConfigUnitTest
 {
-    private readonly ApplicationDbContext _actContext;
+    private readonly ApplicationDbContext _setupContext;
     private readonly ApplicationDbContext _arrangeContext;
     private readonly ApplicationDbContext _assertDataContext;
 
@@ -12,7 +12,7 @@ public abstract class DatabaseConfigUnitTest
     {
         var db = new EfInMemoryDatabase();
         _arrangeContext = db.CreateDataContext<ApplicationDbContext>();
-        _actContext = db.CreateDataContext<ApplicationDbContext>();
+        _setupContext = db.CreateDataContext<ApplicationDbContext>();
         _assertDataContext = db.CreateDataContext<ApplicationDbContext>();
     }
 
@@ -21,9 +21,9 @@ public abstract class DatabaseConfigUnitTest
         return _arrangeContext;
     }
 
-    protected ApplicationDbContext ActContext()
+    protected ApplicationDbContext SetupContext()
     {
-        return _actContext;
+        return _setupContext;
     }
 
     protected ApplicationDbContext AssertContext()

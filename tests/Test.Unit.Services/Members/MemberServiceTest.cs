@@ -18,7 +18,7 @@ public class MemberServiceTest : DatabaseConfigUnitTest
         var repository = MemberRepositoryFactory.CreateMock();
         var dto = CreateMemberDtoFactory.Generate(id,firstName, lastName);
         repository.SetupAddMember(id,firstName,lastName);
-        var sut = MemberServiceFactory.Create(ActContext(), repository.Object);
+        var sut = MemberServiceFactory.Create(SetupContext(), repository.Object);
 
         sut.Create(dto);
         

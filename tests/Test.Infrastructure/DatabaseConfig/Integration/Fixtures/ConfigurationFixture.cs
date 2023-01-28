@@ -3,11 +3,11 @@ using Xunit;
 
 namespace Test.Infrastructure.DatabaseConfig.Integration;
 
-public abstract class ConfigurationFixture
+public class ConfigurationFixture
 {
     public TestSettings Value { get; private set; }
 
-    protected ConfigurationFixture()
+    public ConfigurationFixture()
     {
         Value = GetSettings();
     }

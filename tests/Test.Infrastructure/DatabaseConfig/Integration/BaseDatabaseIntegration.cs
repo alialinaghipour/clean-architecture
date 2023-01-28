@@ -1,9 +1,6 @@
-﻿using Persistence.Ef;
-using Test.Infrastructure.DatabaseConfig.Unit;
+﻿namespace Test.Infrastructure.DatabaseConfig.Integration;
 
-namespace Test.Infrastructure.DatabaseConfig.Integration;
-
-public class BaseDatabaseIntegration : EFDataContextDatabaseFixture
+public class BaseDatabaseIntegration : ApplicationDbContextDatabaseFixture
 {
     private readonly ApplicationDbContext _setupDbContext;
     private readonly ApplicationDbContext _arrangeDbContext;
